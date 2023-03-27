@@ -4,6 +4,7 @@ import Movies from "../models/Movies.js";
 const router = express.Router();
 
 router.post("/", (req, res) => {
+  console.log(req.body)
   const {
     title,
     rating,

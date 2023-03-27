@@ -3,12 +3,14 @@ import axios from 'axios'
 import Movies from './components/Movies'
 import Add from './components/Add'
 import Edit from './components/Edit'
-
+import css from './App.css'
 
 
 const App = () => {
 //STATE
 const [movie, setMovie] = useState([])
+
+
 
 
   const getMovies = () => {
@@ -27,13 +29,14 @@ const [movie, setMovie] = useState([])
  };
 
  const handleDelete = (deletedMovie) => {
+  console.log(deletedMovie)
   axios.delete('http://localhost:3000/movies/' + deletedMovie._id)
   .then((response) => {
    let newMovie = movie.filter((Movie) => {
       return movie._id !== deletedMovie._id
    })
   })
- }
+ };
 
   const handleEdit = (data) => {
     axios.put('http://localhost:3000/movies/' + data._id, data)
@@ -44,9 +47,9 @@ const [movie, setMovie] = useState([])
        })
        setMovie(newMovie)
     })
-  }
+  };
  
-
+ 
 
 
   useEffect(() => {
@@ -55,9 +58,13 @@ const [movie, setMovie] = useState([])
 
 
   return (
+   
     <div>
+      
     {movie.map((movie) => (
+ 
     <div key={movie._id}>
+      
        <Movies movie={movie} />
 
        <Add handleCreate={handleCreate}/>
@@ -65,9 +72,9 @@ const [movie, setMovie] = useState([])
        <button onClick={()=>{handleDelete(movie)}}>X</button>
 
        <Edit Movie={movie} handleEdit={handleEdit}/>
-       
+    
     </div>
-      ))};
+      ))}
 
     </div>
     )

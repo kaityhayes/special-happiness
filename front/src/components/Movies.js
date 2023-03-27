@@ -1,5 +1,10 @@
+
 const Movies = (props) => {
+  
+
+
     return(
+      
      <>
        <h3>Title: {props.movie.title}</h3>
        <img src={props.movie.image}/>
@@ -15,8 +20,11 @@ const Movies = (props) => {
           <li key={gen}>{gen}</li>
         ))}
        </ul>
+       
      </>
+    
     )
- }
+
+ };
  
  export default Movies

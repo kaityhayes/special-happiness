@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+h1 {
+  text-align: center;
+}
+
+body {
+  text-align: center;
+}
+
+ul {
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: 'Delicious Handrawn', cursive;
+
+}
+

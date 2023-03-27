@@ -2,6 +2,7 @@ import {useState} from 'react'
 
 const Edit = (props) => {
   const [movie, setMovie] = useState({...props.movie})
+  const [revealContent, setRevealContent] = useState(false)
 
   const handleChange = (event) => {
     setMovie({...movie, [event.target.name]: event.target.value})
@@ -12,6 +13,8 @@ const Edit = (props) => {
       props.handleEdit(movie)
    };
 
+
+
   return(
     <>
       <details>
@@ -21,7 +24,7 @@ const Edit = (props) => {
           <input type='text' name='title' onChange={handleChange} value={movie.title}/>
           <br/>
           <label htmlFor='release'>Release Date: </label>
-          <input type='number' name='release' onChange={handleChange} value={movie.release}/>
+          <input type='text' name='release' onChange={handleChange} value={movie.release}/>
           <br />
           <label htmlFor='actors'>Starring: </label>
           <input type='text' name='actors' onChange={handleChange} value={movie.actors}/>
