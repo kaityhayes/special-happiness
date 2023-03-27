@@ -37,21 +37,35 @@
   }
 }
 
+
+
 h1 {
   text-align: center;
+  
 }
 
 body {
   text-align: center;
 }
 
-ul {
-  text-decoration: none;
-  list-style: none;
+
+
+body, button {
+  font-family: 'Delicious Handrawn', cursive;
 }
 
 body {
-  font-family: 'Delicious Handrawn', cursive;
-
+  background-image: url("https://i.imgur.com/BOg3ERI.png");
+  
+  background-repeat: repeat; 
 }
 
+.Scroll {
+    width: 600px;
+    height: 380px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+  }

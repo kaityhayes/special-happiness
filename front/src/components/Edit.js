@@ -26,8 +26,8 @@ const Edit = (props) => {
           <label htmlFor='release'>Release Date: </label>
           <input type='text' name='release' onChange={handleChange} value={movie.release}/>
           <br />
-          <label htmlFor='actors'>Starring: </label>
-          <input type='text' name='actors' onChange={handleChange} value={movie.actors}/>
+          <label htmlFor='actor'>Starring: </label>
+          <input type='text' name='actor' onChange={handleChange} value={movie.actor}/>
           <br />
           <label htmlFor='genre'>Genre: </label>
           <input type='text' name='genre' onChange={handleChange} value={movie.genre}/>

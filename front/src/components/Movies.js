@@ -6,21 +6,16 @@ const Movies = (props) => {
     return(
       
      <>
+     <div className='Scroll'>
        <h3>Title: {props.movie.title}</h3>
        <img src={props.movie.image}/>
        <p>Release Date: {props.movie.release}</p>
-       <ul>
-        {props.movie.actors.map(actor => (
-          <li key={actor}>{actor}</li>
-        )) }
-       </ul>
+      
+        <p>Actors: {props.movie.actor}</p>
+      
        <p>Rating: {props.movie.rating}</p>
-       <ul>
-        {props.movie.genre.map(gen => (
-          <li key={gen}>{gen}</li>
-        ))}
-       </ul>
-       
+       <p>Genre: {props.movie.genre}</p>
+       </div> 
      </>
     
     )

@@ -1,7 +1,7 @@
 import {useState} from 'react'
 
 const Add = (props) => {
-   const [movie, setMovie] = useState({title: '', release: '', genre: [], rating: '', actors: []})
+   const [movie, setMovie] = useState({title: '', release: '', genre: '', rating: '', actor: ''})
    const [revealContent, setRevealContent] = useState(false)
 
 
@@ -31,8 +31,8 @@ const Add = (props) => {
     <label htmlFor='release'>Release Date:</label>
     <input type='text' name='release' onChange={handleChange}/>
     <br />
-    <label htmlFor='actors'>Staring:</label>
-    <input type='text' name='actors' onChange={handleChange}/>
+    <label htmlFor='actor'>Staring:</label>
+    <input type='text' name='actor' onChange={handleChange}/>
     <br/>
     <label htmlFor='genre'>Genre:</label>
     <input type='text' name='genre' onChange={handleChange}/>

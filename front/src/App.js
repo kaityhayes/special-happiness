@@ -60,6 +60,7 @@ const [movie, setMovie] = useState([])
   return (
    
     <div>
+      <Add handleCreate={handleCreate}/>
       
     {movie.map((movie) => (
  
@@ -67,11 +68,10 @@ const [movie, setMovie] = useState([])
       
        <Movies movie={movie} />
 
-       <Add handleCreate={handleCreate}/>
 
-       <button onClick={()=>{handleDelete(movie)}}>X</button>
+       <button onClick={()=>{handleDelete(movie)}}>delete</button>
 
-       <Edit Movie={movie} handleEdit={handleEdit}/>
+       <Edit movie={movie} handleEdit={handleEdit}/>
     
     </div>
       ))}
