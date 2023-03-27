@@ -15,7 +15,12 @@ router.get("/", (req, res) => {
 });
 
 // read one
-// router.get("/:id", (req, res) => {});
+router.get("/:id", (req, res) => {
+  Movies.findById(req.params.id).then(movie => {
+    res.json(movie);
+  })
+    .catch(err => console.log("GET /:id error: ", err));
+});
 
 // update
 // router.put("/:id", (req, res) => {});
