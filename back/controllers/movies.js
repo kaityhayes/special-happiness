@@ -61,6 +61,11 @@ router.put("/:id", (req, res) => {
 });
 
 // delete
-// router.delete("/:id", (req, res) => {});
+router.delete("/:id", (req, res) => {
+  Movies.findByIdAndDelete({ _id: req.params.id }).then(movie => {
+    res.json(movie);
+  })
+    .catch(err => console.log("DELETE /:id error: ", err));
+});
 
 export default router;
