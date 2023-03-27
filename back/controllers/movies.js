@@ -4,7 +4,21 @@ import Movies from "../models/Movies.js";
 const router = express.Router();
 
 // create
-// router.post("/", (req, res) => {});
+router.post("/", (req, res) => {
+  const {
+    title,
+    rating,
+    actors,
+    release,
+    image,
+    genre
+  } = req.body;
+  Movies.create({ title, actors, rating, release, genre, image, })
+    .then(movie => {
+      res.json(movie);
+    })
+    .catch(err => console.log("POST / error: ", err));
+});
 
 // read all
 router.get("/", (req, res) => {
