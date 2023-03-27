@@ -8,12 +8,12 @@ router.post("/", (req, res) => {
   const {
     title,
     rating,
-    actors,
+    actor,
     release,
     image,
     genre
   } = req.body;
-  Movies.create({ title, actors, rating, release, genre, image, })
+  Movies.create({ title, actor, rating, release, genre, image, })
     .then(movie => {
       res.json(movie);
     })
@@ -40,7 +40,7 @@ router.put("/:id", (req, res) => {
   const {
     title,
     rating,
-    actors,
+    actor,
     release,
     image,
     genre
@@ -48,7 +48,7 @@ router.put("/:id", (req, res) => {
   const updatedMovie = {
     title,
     rating,
-    actors,
+    actor,
     release,
     image,
     genre
