@@ -8,7 +8,10 @@ const router = express.Router();
 
 // read all
 router.get("/", (req, res) => {
-  res.send("Under construction...");
+  Movies.find().then(movies => {
+    res.json(movies);
+  })
+    .catch(err => console.log("GET / error: ", err));
 });
 
 // read one
