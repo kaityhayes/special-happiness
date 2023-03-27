@@ -3,7 +3,6 @@ import Movies from "../models/Movies.js";
 
 const router = express.Router();
 
-// create
 router.post("/", (req, res) => {
   const {
     title,
@@ -20,7 +19,6 @@ router.post("/", (req, res) => {
     .catch(err => console.log("POST / error: ", err));
 });
 
-// read all
 router.get("/", (req, res) => {
   Movies.find().then(movies => {
     res.json(movies);
@@ -28,7 +26,7 @@ router.get("/", (req, res) => {
     .catch(err => console.log("GET / error: ", err));
 });
 
-// read one
+
 router.get("/:id", (req, res) => {
   Movies.findById(req.params.id).then(movie => {
     res.json(movie);
@@ -37,7 +35,30 @@ router.get("/:id", (req, res) => {
 });
 
 // update
-// router.put("/:id", (req, res) => {});
+router.put("/:id", (req, res) => {
+  const {
+    title,
+    rating,
+    actors,
+    release,
+    image,
+    genre
+  } = req.body;
+  const updatedMovie = {
+    title,
+    rating,
+    actors,
+    release,
+    image,
+    genre
+  };
+  Movies.findByIdAndUpdate({
+    _id: req.params.id
+  }, updatedMovie).then(movie => {
+    updatedMovie._id = movie._id;
+    res.json(updatedMovie);
+  }).catch(err => console.log("PUT /:id error: ", err));
+});
 
 // delete
 // router.delete("/:id", (req, res) => {});
